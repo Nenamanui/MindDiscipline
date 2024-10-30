@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
     # Главная страница.
     path('', views.index),
-    path('<int:pk>/', views.index)
+    path('<int:pk>/', views.practice)
 ] 
