@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'child.apps.ChildConfig',
     'coach.apps.CoachConfig',
+    'homepage.apps.HomepageConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
