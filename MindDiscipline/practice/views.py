@@ -1,8 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def practices(request):    
-    return HttpResponse('practices')
+    template_name = 'practice/practices.html'
+    gjopa = 'JOPAA'
+    context = {
+        'jopa': gjopa,
+    }
+    return render(request, template_name, context)
 
 def practice(request, pk):
-    return HttpResponse('Тренировка номер', pk)
+    template_name = 'practice/practice.html'
+    pk = pk
+    context = {
+        'pk': pk,
+    }
+    return render(request, template_name, context)

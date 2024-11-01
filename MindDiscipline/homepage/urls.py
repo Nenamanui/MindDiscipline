@@ -3,7 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Главная страница.
-    path('', views.index),
-    path('<int:pk>/', views.practice)
+    path('', views.enter_screen)
 ] 

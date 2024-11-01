@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 
-def index(request):
+
+def enter_screen(request):
     template_name = 'homepage/homepage.html'
     return render(request, template_name)
 
-def practice(request, pk):
-    return HttpResponse('Тренировка номер', pk)
+def code_check_screen(request):
+    template_name = 'homepage/code_check.html'
+    return render(request, template_name)
