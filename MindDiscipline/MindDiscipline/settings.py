@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'event.apps.EventConfig',
+    'group.apps.GroupConfig',
     'homepage.apps.HomepageConfig',
     'child.apps.ChildConfig',
     'coach.apps.CoachConfig',
