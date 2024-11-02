@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def index(request, pk):    
+def group_info(request, pk):    
     template_name = 'group/group.html'
     # нулевая в строке поиска ???
     groups = [{'name': 'gryppa 1', 'desc': 'pervaya'}, 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):    
+def child_info(request):    
     return HttpResponse('childs')

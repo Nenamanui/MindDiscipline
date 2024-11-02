@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def practices(request):    
+def practices_list(request):    
     template_name = 'practice/practices.html'
     gjopa = 'JOPAA'
     context = {
@@ -8,7 +8,7 @@ def practices(request):
     }
     return render(request, template_name, context)
 
-def practice(request, pk):
+def practice_info(request, pk):
     template_name = 'practice/practice.html'
     pk = pk
     context = {
