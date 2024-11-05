@@ -1,10 +1,13 @@
 <!DOCTYPE html>
  <html lang="ru">
-  <head><title>{% block title %}{% endblock %}</title> 
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>{% block title %}{% endblock %}</title> 
   </head>
    <body>
      {% include "includes/header.html" %}
-     <main>
+     <main> 
        {% block content %}Контента пока нет :({% endblock %}
      </main>
      {% include "includes/footer.html" %}
