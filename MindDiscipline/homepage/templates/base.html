@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
  <html lang="ru">
   <head>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <title>{% block title %}{% endblock %}</title> 
   </head>
    <body>
-     {% include "includes/header.html" %}
+     {% include "homepage/includes/header.html" %}
      <main> 
        {% block content %}Контента пока нет :({% endblock %}
      </main>
-     {% include "includes/footer.html" %}
+     {% include "homepage/includes/footer.html" %} 
    </body>
 </html>
