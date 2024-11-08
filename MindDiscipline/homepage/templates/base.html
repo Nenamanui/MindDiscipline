@@ -3,10 +3,11 @@
  <html lang="ru">
   <head>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="icon" href="{% static 'img/home1.svg' %}" type="image">
     <title>{% block title %}{% endblock %}</title> 
   </head>
    <body>
-     {% include "homepage/includes/header.html" %}
+     {% block header%}{% endblock %}
      <main> 
        {% block content %}Контента пока нет :({% endblock %}
      </main>

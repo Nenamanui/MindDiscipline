@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Что такое Mind Discipline?
+  {% endblock %}
+
+  {% block content %}
+  <h1>text</h1>
+  <p>texttexttext</p>
+  {% endblock %}
+
+  {% block header %}
+  <header>
+    {% with request.resolver_match.view_name as view_active %}
+    <img src="{% static 'img/home.png' %}" height="30" alt="home_img">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+        <a class="nav-link"
+           href="{% url 'homepage:enter_screen' %}">
+           Вход в Mind Discipline
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if view_active  == 'homepage:about' %}active{% endif %}" href="{% url 'homepage:about' %}">
+        Что такое Mind Discipline?
+        </a>
+      </li>
+      </ul>
+    {% endwith %}
+  </header>
+  {% endblock %}

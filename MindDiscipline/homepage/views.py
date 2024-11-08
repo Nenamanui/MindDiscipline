@@ -10,5 +10,5 @@ def code_check_screen(request):
     return render(request, template_name)
 
 def about(request):
-    template_name= 'homepage/what_is_md.html'
+    template_name= 'homepage/about.html'
     return render(request, template_name)
