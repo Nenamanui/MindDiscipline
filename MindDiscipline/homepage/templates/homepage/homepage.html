@@ -8,28 +8,24 @@ Mind Discipline
 {% block header %}
 <header>
   {% with request.resolver_match.view_name as view_active %}
-  <img src="{% static 'img/home.png' %}" height="30" alt="home_img">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-      <a class="nav-link {% if view_active  == 'homepage:enter_screen' %}active{% endif %}"
-         href="{% url 'homepage:enter_screen' %}">
-         Вход в Mind Discipline
+  <nav class="nav nav-pills nav-justified">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'homepage:enter_screen' %}">
+        <img src="{% static 'img/home.png' %}" height="25" alt="home_img">
       </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'homepage:about' %}">
-      Что такое Mind Discipline?
-      </a>
-    </li>
-    </ul>
+    </nav>
+    <a class="nav-link {% if view_active  == 'homepage:enter_screen' %}active{% endif %}"
+      href="{% url 'homepage:enter_screen' %}">Вход в Mind Discipline</a>
+    <a class="nav-link" href="{% url 'homepage:about' %}">Что такое Mind Discipline?</a>
+  </nav>
   {% endwith %}
 </header>
+<hr style="height: 5px; color: #f00fc3">
 {% endblock %}
 
  {% block content %}
-   <h1>homepage stranica</h1>
+   <h1>Войти в аккаунт</h1>
  <div class="row">
-  <div class="col-6" style="background: green;">Первый блок adin</div>
-  <div class="col-6" style="background: yellow;">Второй блок div</div>
+  <div class="col-12" style="background: green;">Первый блок adin</div>
  </div>
  {% endblock %}

@@ -13,20 +13,16 @@
   {% block header %}
   <header>
     {% with request.resolver_match.view_name as view_active %}
-    <img src="{% static 'img/home.png' %}" height="30" alt="home_img">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-        <a class="nav-link"
-           href="{% url 'homepage:enter_screen' %}">
-           Вход в Mind Discipline
+    <nav class="nav nav-pills nav-justified">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'homepage:enter_screen' %}">
+          <img src="{% static 'img/home.png' %}" height="25" alt="home_img">
         </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {% if view_active  == 'homepage:about' %}active{% endif %}" href="{% url 'homepage:about' %}">
-        Что такое Mind Discipline?
-        </a>
-      </li>
-      </ul>
+      </nav>
+      <a class="nav-item nav-link" href="{% url 'homepage:enter_screen' %}">Вход в Mind Discipline</a>
+      <a class="nav-item nav-link" {% if view_active  == 'homepage:about' %}active{% endif %}
+        href="{% url 'homepage:about' %}">Что такое Mind Discipline?</a>
+    </nav>
     {% endwith %}
   </header>
   {% endblock %}
