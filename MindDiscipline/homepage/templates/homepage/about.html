@@ -3,14 +3,9 @@
 
 {% block title %}
 Что такое Mind Discipline?
-  {% endblock %}
+{% endblock %}
 
-  {% block content %}
-  <h1>text</h1>
-  <p>texttexttext</p>
-  {% endblock %}
-
-  {% block header %}
+{% block header %}
   <header>
     {% with request.resolver_match.view_name as view_active %}
     <nav class="nav nav-pills nav-justified">
@@ -25,4 +20,10 @@
     </nav>
     {% endwith %}
   </header>
-  {% endblock %}
+{% endblock %}
+
+{% block content %}
+  <h1>text</h1>
+  <p>texttexttext</p>
+{% endblock %}
+
