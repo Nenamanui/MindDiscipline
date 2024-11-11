@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}
-Что такое Mind Discipline?
-{% endblock %}
+{% block title %}Что такое Mind Discipline?{% endblock %}
 
 {% block header %}
   <header>
@@ -15,11 +13,12 @@
         </a>
       </nav>
       <a class="nav-item nav-link" href="{% url 'homepage:enter_screen' %}">Вход в Mind Discipline</a>
-      <a class="nav-item nav-link" {% if view_active  == 'homepage:about' %}active{% endif %}
+      <a class="nav-item nav-link {% if view_active  == 'homepage:about' %}active{% endif %}"
         href="{% url 'homepage:about' %}">Что такое Mind Discipline?</a>
     </nav>
     {% endwith %}
   </header>
+  <hr style="height: 5px; color: #f00fc3">
 {% endblock %}
 
 {% block content %}
