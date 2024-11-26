@@ -8,5 +8,5 @@ class Coach(models.Model):
     main_sport = models.CharField(max_length=50)
     extra_sport = models.CharField(max_length=50)
     birthday = models.DateField()
-    experience_date = models.PositiveSmallIntegerField()
+    experience_years = models.PositiveSmallIntegerField()
     practice = models.ManyToManyField('practice.practice')
