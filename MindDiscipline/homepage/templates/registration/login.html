@@ -29,14 +29,14 @@ Mind Discipline (login)
      <p>Your username and password didn't match. Please try again.</p>
    {% endif %}
    
-   {% if next %}
+   {% comment %} {% if next %}
      {% if user.is_authenticated %}
        <p>Your account doesn't have access to this page. To proceed,
        please login with an account that has access.</p>
      {% else %}
        <p>Please login to see this page.</p>
      {% endif %}
-   {% endif %}
+   {% endif %} {% endcomment %}
    
    <form method="post" action="{% url 'login' %}">
    {% csrf_token %}
@@ -53,10 +53,10 @@ Mind Discipline (login)
    </tr>
    </table>
    
-   <input type="submit" value="login" />
-   <input type="hidden" name="next" value="{{ next }}" />
+   <input type="submit" value="Войти" />
+   {% comment %} <input type="hidden" name="next" value="{{ next }}" /> {% endcomment %}
    </form>
    
    {# Assumes you setup the password_reset view in your URLconf #}
-   <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+   {% comment %} <p><a href="{% url 'password_reset' %}">Lost password?</a></p> {% endcomment %}
 {% endblock %}
