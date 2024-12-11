@@ -8,4 +8,4 @@ class Practice(models.Model):
     main_theme = models.CharField(max_length=50)
     description = models.TextField()
     # coach = models.ForeignKey(Coach, on_delete=)
-    # child = models.ManyToManyField(Child)
+    child = models.ManyToManyField('child.Child')
