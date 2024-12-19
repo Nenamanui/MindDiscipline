@@ -10,7 +10,6 @@ class Coach(models.Model):
     extra_sport = models.CharField(max_length=50, blank=True, verbose_name='Дополнительный вид спорта')
     birthday = models.DateField(verbose_name='Дата рождения')
     experience_years = models.PositiveSmallIntegerField(verbose_name='Стаж')
-    practice = models.ManyToManyField('practice.practice', verbose_name='Тренировки')
 
     class Meta:
         verbose_name = 'Тренер'

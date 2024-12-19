@@ -6,12 +6,13 @@ from .models import Coach
 
 
 
-class CoachCustomAdmin(admin.ModelAdmin):
+class CustomCoachAdmin(admin.ModelAdmin):
     search_fields = ('last_name', 'first_name', 'patronymic_name', 'main_sport')
     list_display = ('last_name', 'first_name', 'patronymic_name', 'main_sport')
     list_display_links = ('last_name', 'first_name', 'patronymic_name')
     list_filter = ('main_sport', 'extra_sport', 'experience_years')
-    filter_horizontal = ('practice',)
+    # filter_horizontal = ('group',)
 
 
-admin.site.register(Coach, CoachCustomAdmin)
+
+admin.site.register(Coach, CustomCoachAdmin)
