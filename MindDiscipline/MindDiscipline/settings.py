@@ -57,6 +57,8 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+AUTH_USER_MODEL = 'homepage.User'
+
 INTERNAL_IPS = [
     '127.0.0.1',
 ]

@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
+from homepage.models import User
 from django import forms
 
 class SignUpForm(UserCreationForm):
