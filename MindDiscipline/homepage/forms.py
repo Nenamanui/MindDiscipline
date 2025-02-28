@@ -5,14 +5,11 @@ from django import forms
 
 class SignUpForm(forms.Form):
     email = forms.EmailField(max_length=254, help_text='Необязательно')
-    phone = PhoneNumberField(
-        label="Номер телефона",
-        widget=forms.TextInput(attrs={'placeholder': '+7 XXX XXX-XX-XX'})
-    )
+    phone = PhoneNumberField()
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'phone_number', 'password1', 'password2')
+        fields = ('username', 'email', 'phone', 'password1', 'password2')
 
 # class LoginForm(AuthenticationForm):
 #     username = forms.CharField(label='Имя пользователя')

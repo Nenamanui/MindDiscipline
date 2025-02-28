@@ -8,13 +8,13 @@
   {% with request.resolver_match.view_name as view_active %}
   <nav class="nav nav-pills nav-justified">
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="{% url 'homepage:enter_screen' %}">
+      <a class="navbar-brand">   {% comment %}href="{% url 'homepage:code_check_screen' %}" {% endcomment %}
         <img src="{% static 'img/home.png' %}" height="25" alt="home_img">
       </a>
     </nav>
-    <a class="nav-link {% if view_active  == 'homepage:enter_screen' %}active{% endif %}"
-      href="{% url 'homepage:enter_screen' %}">Вход в Mind Discipline</a>
-    <a class="nav-link" href="{% url 'homepage:about' %}">Что такое Mind Discipline?</a>
+    {% comment %} <a class="nav-link {% if view_active  == 'homepage:WelcomeScreenView' %}active{% endif %}"
+      href="{% url 'homepage:WelcomeScreenView' %}">Вход в Mind Discipline</a>
+    <a class="nav-link" href="{% url 'homepage:about' %}">Что такое Mind Discipline?</a> {% endcomment %}
   </nav>
   {% endwith %}
 </header>
@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block content %}
-   <a href="{% url 'login' %}">Войти в аккаунт</a>
+   <a href="{% url 'homepage:phoneauth' %}">Войти в аккаунт или зарегистрировать новый аккаунт</a>
    <form>
     {{ form }}
     <input type='submit' value='Входимс'>

@@ -1,9 +1,22 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, get_user_model#, authenticate
+from django.contrib.auth import get_user_model#, authenticate
 from .forms import SignUpForm #, LoginForm
 from django.views.generic import TemplateView
 
 User = get_user_model()
+
+class WelcomeScreenView(TemplateView):
+    template_name = 'homepage/homepage.html'
+    model = User
+
+
+class PhoneAuthView(TemplateView):
+    template_name = 'homepage/auth.html'
+    model = User
+
+
+class AboutView(TemplateView):
+    template_name = 'homepage/about.html'
 
 
 def phone_auth_view(request):
@@ -21,7 +34,7 @@ def phone_auth_view(request):
                 return redirect('register')
     else:
         form = SignUpForm()
-    return render(request, 'auth/phone_input.html', {'form': form})
+    return render(request, 'homepage/login.html', {'form': form})
 
 def login_with_password(request, phone):
     # (используйте django.contrib.auth.views.LoginView)
@@ -42,12 +55,6 @@ def registration_view(request):
     # return render(request, 'auth/register.html', {'form': form})
 
 
-
-class WelcomeScreenView(TemplateView):
-    template_name = 'homepage/homepage.html'
-    model = User
-
-
 # def welcome_screen(request):
 #     template_name = 'homepage/homepage.html'
 #     if request.method == 'POST':
@@ -60,25 +67,20 @@ class WelcomeScreenView(TemplateView):
 #         form = SignUpForm()
 #     return render(request, template_name, {'form': form})
 
-# def code_check_screen(request):
-#     template_name = 'homepage/code_check.html'
-#     form = LoginForm(data=request.POST or None)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             username = form.cleaned_data['username']
-#             password = form.cleaned_data['password']
-#             user = authenticate(username=username, password=password)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('homepage.html')
-#     return render(request, template_name, {'form': form})
+def code_check_screen(request):
+    template_name = 'homepage/code_check.html'
+    form = LoginForm(data=request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('homepage.html')
+    return render(request, template_name, {'form': form})
 
 
-# def profile(request):
-#     template_name= 'homepage/profile.html'
-#     return render(request, template_name)
-
-
-# def about(request):
-#     template_name= 'homepage/about.html'
-#     return render(request, template_name)
+def profile(request):
+    template_name= 'homepage/profile.html'
+    return render(request, template_name)
