@@ -1,2 +1,3 @@
 venv/
 insert.py
+db.sqlite3
